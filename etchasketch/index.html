@@ -3,10 +3,23 @@
     
 </head>
 <body>
-    <canvas id="myCanvas">
+    <canvas id="myCanvas" width="100%" height="100%">
         <script>
-            
-        </script>
+            $(function()
+            {
+            $("#myCanvas").click(function(e)
+            {
+                var offset = $(this).offset();
+                var relativeX = (e.pageX - offset.left);
+                var relativeY = (e.pageY - offset.top);
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                ctx.fillStyle = "#FF0000";
+                ctx.fillRect(relativeX, relativeY, 100, 101);
+            });
+            });
+</script>
     </canvas>
+        
 </body>
 </html>
