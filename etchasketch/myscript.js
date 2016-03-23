@@ -27,3 +27,16 @@ function newGrid() {
     var c = parseInt(prompt("Enter a size (1-100): ",10),10);
     createGrid(c);
 }
+
+$('.square').on({
+    mouseenter: function()
+    {
+        $(this).fadeOut();
+        alert("mouseenter");
+    },
+    mouseleave: function()
+    {
+        $(this).fadeIn();
+        alert("mouseleave");
+    },
+});
