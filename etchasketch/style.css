@@ -2,10 +2,11 @@ td{
     background-color:blue;
 }
 table{
-    width:90%;
+    width:100%;
 }
 html,body,table{
-    height:90%;
+    height:100%;
+    padding: 0,0,0,0;
 }
 #size{
     align-content: center;
