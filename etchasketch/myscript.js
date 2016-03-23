@@ -2,6 +2,18 @@ var defSize=4;
 
 $(document).ready(function(){
     createGrid(defSize);
+	$('.square').on({
+    mouseenter: function()
+    {
+        $(this).fadeOut();
+        alert("mouseenter");
+    },
+    mouseleave: function()
+    {
+        $(this).fadeIn();
+        alert("mouseleave");
+    },
+});
 });
 
 $('.resize').click(function(){
@@ -28,15 +40,4 @@ function newGrid() {
     createGrid(c);
 }
 
-$('.square').on({
-    mouseenter: function()
-    {
-        $(this).fadeOut();
-        alert("mouseenter");
-    },
-    mouseleave: function()
-    {
-        $(this).fadeIn();
-        alert("mouseleave");
-    },
-});
+
