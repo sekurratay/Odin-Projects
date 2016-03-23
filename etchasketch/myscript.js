@@ -9,6 +9,7 @@ $(document).ready(function() {
         $('tr').append('<td>x</td>');
     }
     
+    
 });
 
 function newGrid() {
