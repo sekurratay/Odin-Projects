@@ -1,23 +1,9 @@
-var defSize=4;
-
 $(document).ready(function(){
-    createGrid(defSize);
-	$('.square').on({
-    mouseenter: function()
-    {
-        $(this).fadeOut();
-        alert("mouseenter");
-    },
-    mouseleave: function()
-    {
-        $(this).fadeIn();
-        alert("mouseleave");
-    },
-});
-});
-
-$('.resize').click(function(){
-        newGrid();
+    createGrid(4);
+	
+	$('.resize').click(function(){
+			newGrid();
+	});
 });
 
 function createGrid(size){
@@ -32,12 +18,22 @@ function createGrid(size){
     }
     var width = $('table').width()/size;
     $('.square').css({"width":width,"height":width});
+	
+	$('.square').on({
+		mouseenter: function()
+		{
+			$(this).fadeOut();
+		},
+		mouseleave: function()
+		{
+			$(this).fadeIn();
+		},
+	});
 };
 
 function newGrid() {
-    $('.square').remove();
+    $('table').remove();
+	$('body').append("<table></table>");
     var c = parseInt(prompt("Enter a size (1-100): ",10),10);
     createGrid(c);
 }
-
-
