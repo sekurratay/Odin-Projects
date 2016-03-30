@@ -1,9 +1,23 @@
+var colorChoice = 'black';
 $(document).ready(function(){
     createGrid(4);
 	
-	$('.resize').click(function(){
+    //Resize grid functionality
+    //TODO: Add validation for ONLY integers, ONLY between 1-100
+	$('#resize').click(function(){
 			newGrid();
 	});
+    
+    //Clear functionality
+    $('#clear').click(function(){
+        $('.square').css({'background-color':'gray'});
+    });
+    
+    //Set random color
+    $('#random').click(function(){
+        colorChoice = ('#' + Math.random().toString(16).slice(2, 8).toUpperCase());
+        alert(colorChoice.toString());
+    });
 });
 
 function createGrid(size){
@@ -16,17 +30,13 @@ function createGrid(size){
     {
         $('tr').append('<td class="square"></td>');
     }
-    var width = $('table').width()/size;
+    var width = ($('table').width()/size);
     $('.square').css({"width":width,"height":width});
 	
 	$('.square').on({
 		mouseenter: function()
 		{
-			$(this).fadeOut();
-		},
-		mouseleave: function()
-		{
-			$(this).fadeIn();
+			$(this).css({'background-color': colorChoice});
 		},
 	});
 };
